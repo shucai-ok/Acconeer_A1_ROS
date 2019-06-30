@@ -154,10 +154,6 @@ set_source_files_properties(
 )
 
 
-#add_executable(listener src/listener.cpp)
-#target_link_libraries(listener ${catkin_LIBRARIES})
-#add_dependencies(listener beginner_tutorials_generate_messages_cpp)
-
 ## Declare a C++ library
 # add_library(lib libacconeer.a libacconeer_a111_r2c.a libacc_service.a#${PROJECT_NAME}
 #   lib/${PROJECT_NAME}/acconeer/libacconeer.a
@@ -176,12 +172,13 @@ set_source_files_properties(
 #add_library(acconeer_a111_r2c src/libacconeer_a111_r2c.a)
 #add_library(acc_service src/libacc_service.a)
 #add_library(customer src/libcustomer.a)
-
-
-
-
 add_dependencies(talker acconeer_sensor_generate_messages_cpp)
 
+
+
+add_executable(topic_subscriber src/topic_subscriber.cpp)
+target_link_libraries(listener ${catkin_LIBRARIES})
+add_dependencies(topic_subscriber acconeer_sensor_generate_messages_cpp)
 ## Add cmake target dependencies of the library
 ## as an example, code may need to be generated before libraries
 ## either from message generation or dynamic reconfigure
