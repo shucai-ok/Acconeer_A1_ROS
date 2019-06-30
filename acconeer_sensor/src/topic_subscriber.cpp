@@ -1,7 +1,7 @@
 #include "ros/ros.h"
-#include "ros_tutorials_topic/sensData.h"
+#include "acconeer_sensor/sensData.h"
 
-void chatterCallback(const ros_tutorials_topic::sensData::ConstPtr& msg)
+void chatterCallback(const acconeer_sensor::sensData::ConstPtr& msg)
 {
   ROS_INFO("Sensor 1:");
 	for (int i = 0; i<620;i++){
